@@ -58,8 +58,13 @@ defaults:
 
   store-eth: &store-eth
     store_artifacts:
-      path: build/eth/eth
+      path: ~/build/eth/eth
       destination: eth
+
+  store-testeth: &store-testeth
+    store_artifacts:
+      path: ~/build/test/testeth
+      destination: testeth
 
   save-deps-cache: &save-deps-cache
     cache-save:
@@ -103,6 +108,7 @@ defaults:
     - *build
     - *save-deps-cache
     - *store-eth
+    - *store-testeth
     - *restore-ethash-dag
     - *test
     - *save-ethash-dag
@@ -165,6 +171,7 @@ jobs:
       - *build
       - *save-deps-cache
       - *store-eth
+      - *store-testeth
       - *restore-ethash-dag
       - *test
       - *save-ethash-dag
