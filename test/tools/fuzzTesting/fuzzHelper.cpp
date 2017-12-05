@@ -635,6 +635,7 @@ BOOST_AUTO_TEST_CASE(rndCode)
 	}
 }
 
+#ifndef __APPLE__
 BOOST_AUTO_TEST_CASE(rndStateTest)
 {
 	try
@@ -651,6 +652,7 @@ BOOST_AUTO_TEST_CASE(rndStateTest)
 		BOOST_ERROR("Exception thrown when generating random code! " + diagnostic_information(_e));
 	}
 }
+#endif
 
 BOOST_AUTO_TEST_SUITE_END()
 
